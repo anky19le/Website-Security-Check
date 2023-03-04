@@ -1,0 +1,145 @@
+<!DOCTYPE html >
+<html lang="en" >
+
+<head>
+<title>BE IT Project</title>  
+<meta charset="utf-8">    
+<meta name="description" content="Bootstrap.">  
+<link href="static/css/style1.css" rel="stylesheet" type="text/css" />
+<!link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>  
+
+<div class="container">
+<div class="row header" style="text-align:center;color:green">
+
+</div>
+<style>
+
+thead th {
+    font-size: 120%;
+}
+tbody td {
+    font-size: 80%;
+}
+#myInput {
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+</style>
+
+<script type="text/javascript">
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+<body style="margin:20px auto">
+<div id="mainBox">
+	<div id="headerBox">
+	<img src="/static/images/logo.jpeg" height="100" width="150" vspace="0">
+	  <ul>
+	  <li><a href="/FirstPage">Home</a></li>
+	  <li><a href="/SecondPage">Start Testing</a></li>
+	  <li><a href="/Summary">Summary </a></li>
+	  <li><a href="/Settings">Settings </a></li>
+
+
+		</ul>
+  </div>
+
+  	<div id="leftBox">
+	<ul>
+	<li><a href="/Help">Help</a></li>
+
+	<li><a href="/Report">Report</a></li>
+	</ul>
+	</div>
+
+<div id="workingBox">
+<!input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+
+<h3>Completed Scans:</h3>
+<form action="{{url_for('Piechart')}}" method="POST">
+
+<div id="summary_content">
+                <table id="myTable" class="display" data-page-length='2' data-order="[[2, 'desc']]">
+                <thead>
+                <tr>
+                <th width="8%">SELECT</th>
+                <th width="10%">SCAN ID</th>
+                <th width="20%">PROJECT NAME</th>
+                <th width="20%">TAG NAME</th>
+                <th width="15%">DATE</th>
+                <th width="10%">STATUS</th>
+		<th width="15%">INJECTION TYPE</th>
+		<th width="15%">API TYPE</th>
+                </tr>
+                </thead>
+                <tbody>
+{% for t in L %}
+                <each>
+                <tr>
+                <td>
+                <input type="checkbox" name="scanid" value={{t.scan_id}}>
+                </td>
+                <td>{{t.scan_id}}</td>
+                <td>{{t.Project_Name}}</td>
+                <td>{{t.Tagname}}</td>
+                <td>{{t.DateTime}}</td>
+                
+		 <td><span style="font-family: wingdings; font-size: 200%; color:green">&#10004; </span>done</td>
+                 <td> {{t.Injection_Type}}</td>
+                 <td> {{t.API_Type}}</td>
+                </tr>
+   
+                </each>
+{%endfor%}
+                </tbody>
+                </table>
+		</div>
+		<div id="upperFooter">
+
+		</div>
+<input type = "submit" value = "Next">
+</form>
+
+
+<div id="upperFooter">
+</div>
+
+</div>
+
+<div id="footer"> All Rights Reserved.<b>&copy; Cummins College</b></div>
+
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#myTable').dataTable({"pageLength": 10});
+});
+</script>
+</html>

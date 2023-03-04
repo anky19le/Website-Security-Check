@@ -1,0 +1,153 @@
+<!DOCTYPE html >
+<html lang="en" >
+
+<head>
+<title>BE IT Project</title>
+<meta http-equiv="Content-Type" content="text/html"  charset="utf-8" />
+<link href="static/css/style1.css" rel="stylesheet" type="text/css" />
+<!script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+            var i = 0;
+			/*var barData = [
+            {% for label, values1 in set %}
+                {
+                    y: {{values1[0]}},
+                    label: "{{label}}",
+                    
+                },
+
+                {% endfor %}
+         ];
+    
+	/**[
+	{% for t in L1 %}
+	var i = 0;
+	{
+		type: "rangeColumn",
+		name: "{{t}}",
+		showInLegend: true,
+		yValueFormatString: "##0",
+		xValueFormatString: "##0",
+		dataPoints: [
+		{% for values, labels, colors, values1  in set %}   
+			{ x: "{{labels}}", y: {{values}},
+        {%endfor%}
+		    ]
+    }
+	i = i+1;
+	{%endfor%},
+	];*/
+	
+	
+	var chart1 = new CanvasJS.Chart("chart1", {
+	animationEnabled: true,
+	title:{
+		text: "Injection wise comparison"
+	},	
+	axisY: {
+		title: "Response Code Count",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	/*axisY2: {
+		title: "Millions of Barrels/day",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},*/	
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor:"pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [
+	{%for t in L1%}
+	{
+		type: "column",
+		name: "{{t}}",
+		legendText: "{{t}}",
+		showInLegend: true, 
+		dataPoints: [
+            {% for label, values1 in set %}
+                {
+                    y: {{values1[0]}},
+                    label: "{{label}}",
+                    
+                },
+
+                {% endfor %}
+         ]
+	},
+	{% endfor %}
+	]
+});
+chart1.render();
+
+function toggleDataSeries(e) {
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else {
+		e.dataSeries.visible = true;
+	}
+	e.chart1.render();
+}
+}
+</script>
+ <!script type="text/javascript" src="Chart.js"></script>
+<!script src='static/chart.min.js'></script>
+</head>
+<body>
+<div id="mainBox">
+	<div id="headerBox">
+	<img src="/static/images/logo.jpeg" height="100" width="150" vspace="0">
+	  <ul>
+	  <li><a href="/FirstPage">Home</a></li>
+	  <li><a href="/SecondPage">Start Testing</a></li>
+	  <li><a href="/Summary">Summary </a></li>
+	  <li><a href="/Settings">Settings </a></li>
+
+
+		</ul>
+  </div>
+
+  	<div id="leftBox">
+	<ul>
+	<li><a href="/Help">Help</a></li>
+
+	<li><a href="/Report">Report</a></li>
+	</ul>
+	</div>
+
+<div id="workingBox">
+<h3><u>Reports:</u></h3>
+<div id="chart1" style="height: 800px; width: 500px;"></div>
+   <form id = "form_id" method = "POST" action= "{{url_for('Report1')}}" >
+   <!input type = "hidden" id = "value1" name = "value1" >
+   <input type = "hidden" id = "value2" name = "value2">
+   <!input type = "submit" value = "Click to view Details" >
+   </form>
+<div id ="demo"></div>
+
+
+<p> 
+		
+</p>
+    
+<div id="upperFooter">
+</div>
+
+</div>
+
+<div id="footer"> All Rights Reserved.<b>&copy; Cummins College</b></div>
+
+</div>
+</body>
+</html>

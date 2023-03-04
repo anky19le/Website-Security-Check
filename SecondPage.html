@@ -1,0 +1,86 @@
+<!DOCTYPE html >
+<html lang="en" >
+
+<head>
+<title>BE IT Project</title>
+<meta http-equiv="Content-Type" content="text/html"  charset="utf-8" />
+<link href="static/css/style1.css" rel="stylesheet" type="text/css" />
+</head>
+<STYLE TYPE="text/css">
+
+TD{font-family: Arial; font-size: 13pt; text-align: left;}
+
+</STYLE>
+<form action="{{url_for('ThirdPage')}}" method="POST">
+<body>
+<div id="mainBox">
+	<div id="headerBox">
+	<img src="/static/images/logo.jpeg" height="100" width="150" vspace="0">
+	  <ul>
+	  <li><a href="/FirstPage">Home</a></li>
+	  <li><a href="/SecondPage">Start Testing</a></li>
+	  <li><a href="/Summary">Summary </a></li>
+	  <li><a href="/Settings">Settings </a></li>
+	
+		
+		</ul>
+  </div>
+
+  	<div id="leftBox">
+	<ul>
+	<li><a href="/Help">Help</a></li>
+	
+	
+	</ul>
+	</div>
+  
+<div id="workingBox">
+
+</br>
+<table>
+<tr>
+<td> <strong><label>Project Name(*)</label></strong></td>
+<td> <input type="text" name = "pro_name" required></input></td> </tr>
+<tr><td><strong><label>TagName(*)</label></strong></td>
+<td> <input type="text" name="Tagname" required></td></br></p>
+</tr>
+<tr><td><h3>Select below Parameters</h3></td></tr>
+<tr><td><strong>Attack Vector(*)&nbsp; </strong></td>
+<td><select name="Attack_Vector">
+<option value="SQL"> SQL </option>
+<option value="OS Commands"> OS Commnads </option>
+<option value="XSS"> XSS </option>
+<option value="LDAP"> LDAP </option>
+<option value="NoSQL"> NoSQL </option>
+</select></td>
+</tr>
+
+<tr><td><strong>API / Script Type(*)&nbsp; </strong></td><td><select name="API_Type">
+<option value="Get"> Get </option>
+<option value="Put"> Put </option>
+<option value="Post"> Post </option>
+<option value="Delete"> Delete </option>
+</select></td></tr>
+
+<tr><td><strong>HTTP/HTTPS(*)&nbsp;</strong></td><td><select name="protocol">
+<option value="HTTP"> HTTP </option>
+<option value="HTTPS"> HTTPS</option>
+</select></td></tr>
+
+</table>
+</br>
+<p><input type="submit" value="NEXT" /></p>
+ 
+  		<div id="upperFooter">
+
+		</div>
+</div>
+<div id="footer"> All Rights Reserved.<b>&copy; Cummins College</b></div>
+</div>
+</body>
+ </form>
+</html>
+
+
+
+

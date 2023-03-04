@@ -1,0 +1,347 @@
+#mainBox {
+	width : 1000px;
+	border : 10px solid #fff;
+	line-height : 3em;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+td{
+	text-align:left;
+}
+
+#headerBox {
+	padding : 0;
+	height : 40px;
+	background-repeat: no-repeat;
+	background-color:#D3D3D3;
+	background: linear-gradient(-90deg, #d3d3d3, white);
+}
+#headerBox ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+	display:inline-block;
+	padding-left:100px;
+	font-size:14px;
+
+	font-family:"verdana";
+}
+#headerBox img{
+	padding:0px;
+height:37px;
+	vertical-align:top;
+}
+#headerBox li {
+    float: left;
+	  padding-left:  40px;
+	}
+#headerBox li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+vertical-align:super;
+    text-decoration: none;
+	text-transform: uppercase;
+
+}
+#headerBox  a:hover {
+    color: #ff4d00;
+	 border-spacing:60px;
+border-bottom: 1px solid #FF4500 ;
+}
+#tagBox{
+border-bottom : 10px solid #fff;
+padding-top:5px;
+}
+#leftBox {
+float : left;
+width : 200px;
+margin : 0;
+height:600px;
+
+}
+#leftBox ul {
+list-style : none;
+width : 150px;
+margin : 0 0 20px 0;
+padding : 0;
+font-size : 1.1em;
+}
+#leftBox li {
+
+padding:10px 0px 0px 0px;
+}
+#leftBox button{
+  background-color: #bdbdbd;
+    border-radius:8px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    cursor: pointer;
+	width:150px;
+}
+#leftBox  a {
+font-weight : bold;
+font-size:13px;
+text-decoration : none;
+color : #505050;
+border-bottom:1px solid;
+padding-left:10px;
+  border-bottom-color: #D3D3D3;
+display : block;
+
+}
+#leftBox li a:hover {
+
+color : #ff4d00;
+border-left : 0 solid #003366;
+}
+#workingBox {
+margin-left : 200px;
+border-left : 10px solid #fff;
+height: 2000px;
+background: white;
+}
+#workingBox h3 {
+color : #004d4d;
+}
+#workingBox h4 {
+color :  #990000;
+}
+#upperFooter {
+
+font-size : 0.9em;
+padding-bottom: 6px
+border-top : 2px solid #fff;
+}
+#footer {
+font-size : 0.9em;
+border-top : 2px solid #fff;
+color : #fff;
+height:30px;
+padding-left:10px;
+background: linear-gradient(to right, gray , white);
+}
+#content{
+height: 500px;
+padding-top : 0.1em;
+
+background: white;
+}
+
+#content input {
+   background: white;
+   border: 1px solid #DDD;
+   border-radius: 0px;
+   box-shadow: 0 0 5px #DDD inset;
+   color: #666;
+   margin-left:20px;
+   outline: none;
+   height:20px;
+   width: 275px;
+  }
+
+
+#content select {
+   background: white;
+   border: 1px solid #DDD;
+   border-radius: 0px;
+   box-shadow: 0 0 5px #DDD inset;
+   color: #666;
+   margin-left:20px;
+   outline: none;
+   height:20px;
+   width: 275px;
+  }
+
+#content label {
+        display:inline-block;
+        font-size:13px;
+	font-family:"verdana";
+	margin-left:20px;
+	font-weight: normal;
+	width:150px;
+	text-align:left;
+}
+#content button {
+background-color: #bdbdbd;
+    border-radius:8px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    cursor: pointer;
+ 	width:150px;
+	margin-left:250px;
+}
+
+#contectInner{
+height: 150px;
+padding-top : 20px;
+background: #fafafa;
+margin-top:30px;
+margin-left :8px;
+width: 790px;
+border-radius:8px;
+}
+
+#contectInner input {
+   background: white;
+   border: 1px solid #DDD;
+   border-radius: 0px;
+   box-shadow: 0 0 5px #DDD inset;
+   color: #666;
+   margin-left:20px;
+   outline: none;
+   height:20px;
+   width: 275px;
+  }
+
+#contectInner label {
+        display:inline-block;
+        font-size:13px;
+	font-family:"verdana";
+	margin-left:20px;
+	font-weight: normal;
+	text-align:left;
+	padding-bottom:5px;
+	width:150px;
+}
+
+#summary_content th,td{
+        font-size:10px;
+	font-family:"verdana";
+	font-weight: normal;
+	text-align:center;
+}
+
+#summary_content tr:nth-child(even){background-color: #f2f2f2}
+
+#summary_content th{
+background-color:#C0C0C0}
+
+#summary_content table {
+	width:750px;
+	margin-left:10px;
+	border-collapse: collapse;
+	margin-top:20px;
+}
+
+#filter_scan label{
+          font-size:10px;
+	font-family:"verdana";
+	margin-left:10px;
+	margin-top:50px;
+	font-weight: bold;
+        color: #C0C0C0;
+}
+#filter_scan th,td{
+        font-size:10px;
+	font-family:"verdana";
+	font-weight: normal;
+	text-align:center;
+}
+
+#filter_scan tr:nth-child(even){
+background-color: #f2f2f2}
+
+#filter_scan th{
+background-color:#C0C0C0;
+text-align:center;}
+
+#filter_scan table {
+	width:750px;
+	margin-left:10px;
+	border-collapse: collapse;
+	margin-top:20px;
+}
+#filter_scan input {
+   background: white;
+   border: 1px solid #DDD;
+   border-radius: 0px;
+   box-shadow: 0 0 5px #DDD inset;
+   color: #666;
+   margin-left:10px;
+   outline: none;
+   height:20px;
+   }
+#settings{
+height: 250px;
+width:600px;
+padding-top : 0.1em;
+background: #f2f2f2;
+}
+
+#settings label{
+            font-size:11px;
+	font-family:"verdana";
+	margin-left:10px;
+	margin-top:50px;
+}
+
+#help{
+  height: 300px;
+width:800px;
+padding-top : 0.1em;
+background: #f2f2f2;
+}
+
+#help label{
+  font-size:12px;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn, .dropbtn:focus {
+    background-color: #990000;
+}
+#myInput {
+    border-box: box-sizing;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}

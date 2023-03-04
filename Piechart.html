@@ -1,0 +1,140 @@
+<!DOCTYPE html >
+<html lang="en" >
+
+<head>
+<title>BE IT Project</title>
+<meta http-equiv="Content-Type" content="text/html"  charset="utf-8" />
+<link href="static/css/style1.css" rel="stylesheet" type="text/css" />
+<!script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+			var pieData = [
+            {% for item,label,colors in set %}
+                {
+                    y: {{item}},
+                    label: "{{label}}",
+                    color : "{{colors}}"
+                },
+                {% endfor %}
+         ];
+
+
+var chart = new CanvasJS.Chart("chart", {
+	animationEnabled: true,
+	title: {
+		text: "Report"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		click: onClick,
+		//yValueFormatString: "##0.00\"%\"",
+		yValueFormatString: "##0",
+		indexLabel: "{label} {y}",
+		dataPoints: pieData
+		
+	}]
+	
+});
+
+	chart.render();
+function onClick(e){
+  
+   var value2 = e.dataPoint.label;
+   
+   document.getElementById("value2").value = e.dataPoint.label;
+   document.getElementById("form_id").submit(); 
+//var queryString = "?para1=" + v + "&para2=" + value2;
+//window.location.href = "{{url_for('Report1')}}" + queryString;
+	}
+}
+</script>
+ <!script type="text/javascript" src="Chart.js"></script>
+<!script src='static/chart.min.js'></script>
+</head>
+<body>
+<div id="mainBox">
+	<div id="headerBox">
+	<img src="/static/images/logo.jpeg" height="100" width="150" vspace="0">
+	  <ul>
+	  <li><a href="/FirstPage">Home</a></li>
+	  <li><a href="/SecondPage">Start Testing</a></li>
+	  <li><a href="/Summary">Summary </a></li>
+	  <li><a href="/Settings">Settings </a></li>
+
+
+		</ul>
+  </div>
+
+  	<div id="leftBox">
+	<ul>
+	<li><a href="/Help">Help</a></li>
+
+	<li><a href="/Report">Report</a></li>
+	</ul>
+	</div>
+
+<div id="workingBox">
+
+<h3><u>Reports:</u></h3>
+<div id="chart" style="height: 800px; width: 500px;"></div>
+   <form id = "form_id" method = "POST" action= "{{url_for('Report1')}}" >
+   <!input type = "hidden" id = "value1" name = "value1" >
+   <input type = "hidden" id = "value2" name = "value2">
+   <!input type = "submit" value = "Click to view Details" >
+   </form>
+<div id ="demo"></div>
+
+<!--script type="text/javascript">
+   var pieData = [
+            {% for item,label,colors in set %}
+                {
+                    value: {{item}},
+                    label: "{{label}}",
+                    color : "{{colors}}"
+                },
+                {% endfor %}
+ 
+ 
+         ];
+ 
+   /** $(document).ready( 
+                function () {
+                    var ctx = document.getElementById("chart").getContext("2d");
+                    var myNewChart = new Chart(ctx).Pie(pieData);
+
+                    $("#chart").click( 
+                        function(evt){
+                            var activePoints = myNewChart.getElementsAtEvent(evt);
+                            var url = "http://127.0.0.1:8002/?label=" + activePoints[0].label + "&value=" + activePoints[0].value;
+                            alert(url);
+                        }
+                    );                  
+                }
+            );
+            function onClick(e){
+		    alert(  e.dataSeries.type+ ", dataPoint { x:" + e.dataPoint.x + ", y: "+ e.dataPoint.y + " }" );   
+	}**/
+   steps = 10
+   max = 10
+   // draw pie chart
+   new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData); 
+   function onClick(e){
+		    alert(  e.dataSeries.type+ ", dataPoint { x:" + e.dataPoint.x + ", y: "+ e.dataPoint.y + " }" );   
+	}
+</script-->
+<p> 
+		
+</p>
+    
+<div id="upperFooter">
+</div>
+
+</div>
+
+<div id="footer"> All Rights Reserved.<b>&copy; Cummins College</b></div>
+
+</div>
+</body>
+</html>
